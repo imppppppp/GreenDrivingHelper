@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">绿驾助手</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="category_home">首页</string>
+    <string name="category_data">数据</string>
+    <string name="category_saving">节油助手</string>
+    <string name="category_driving">驾驶评测</string>
+    <string name="category_more">更多</string>
+    <string name="string_stop">关闭显示</string>
+    <string name="string_start">显示数据</string>
+    
+    <string name="lbl_msg_realtime_listening">实时状态</string>
+    <string name="lbl_field_bat">电瓶电压</string>
+    <string name="lbl_field_rpm">发动机转速</string>
+    <string name="lbl_field_vss">行驶速度</string>
+    <string name="lbl_field_tp">节气门开度</string>
+    <string name="lbl_field_lod">发动机负荷</string>
+    <string name="lbl_field_ect">冷却液温度</string>
+    <string name="lbl_field_mpg">瞬时油耗</string>
+    <string name="lbl_field_avm">平均油耗</string>
+    <string name="lbl_field_fli">剩余油量</string>
+    <string name="lbl_field_dtn">故障码数量</string>
+    
+
+    <string name="lbl_msg_vihicle_amount">汇总统计</string>
+    <string name="lbl_field_dst">本次行驶里程</string>
+    <string name="lbl_field_adst">累计行驶里程</string>
+    <string name="lbl_field_tdst">总里程</string>
+    <string name="lbl_field_fue">本次耗油量</string>
+    <string name="lbl_field_tfue">累计油耗量</string>
+    <string name="lbl_field_acc">累计急加速</string>
+    <string name="lbl_field_dec">累计急减速</string>
+    
+    <string name="lbl_msg_vihicle_habit">驾驶习惯数据</string>
+    <string name="lbl_field_tpc">点火次数</string>
+    <string name="lbl_field_tmt">累计行驶时间</string>
+    <string name="lbl_field_tst">累计怠速时间</string>
+    <string name="lbl_field_awt">平均热车时间e</string>
+    <string name="lbl_field_asp">平均车速</string>
+    <string name="lbl_field_msp">历史最高车速</string>
+    <string name="lbl_field_mrp">历史最高转速</string>
+    <string name="lbl_field_tacc">累计急加速次数</string>
+    <string name="lbl_field_tdec">累计急减速次数</string>
+        
+    <string name="lbl_msg_device_info">设备信息</string>
+    <string name="lbl_field_protocol">通信协议</string>
+    <string name="lbl_field_sn">设备序列号</string>
+    <string name="lbl_field_btname">蓝牙名称</string>
+    <string name="lbl_field_hardver">硬件版本号</string>
+    <string name="lbl_field_softver">软件版本号</string>
+
+    <string name="lbl_msg_vihicle_dtc">汽车故障诊断</string>
+    <string name="lbl_field_tcc">故障码个数</string>
+    <string name="lbl_field_tcd">故障代码</string>
+
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    tools:context="com.imp.SavingHelper.SavingHelperActivity" >
+    
+     <include layout="@layout/title_view" />
+    
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_main_tree_bg"
+        android:gravity="center_vertical" >
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_main_tree_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dip"
+        android:text="油耗"
+        android:textColor="#000000"
+        android:textSize="18dip" />
+ 
+    
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/account_more_list_text"
+        android:layout_height="32dp"
+        android:text="当前油耗" />
+    <TextView
+		 android:id="@+id/nowfule_unit"
+		 style="@style/field_value_style"
+		 android:layout_gravity="left"
+		 android:textColor="#ffffff"
+		 android:text="---- L/h" />  
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/account_more_list_text"
+        android:layout_height="32dp"
+        android:text="最佳油耗" />
+    <TextView
+		android:id="@+id/bestfuel_unit"
+		style="@style/field_value_style"
+	 	android:layout_gravity="left"
+		android:text="---- L/h" />  
+    
+    
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_main_tree_bg"
+        android:gravity="center_vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="15dip"
+        android:text="转速"
+        android:textColor="#000000"
+        android:textSize="18dip" />
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/account_more_list_text"
+        android:layout_height="32dp"
+        android:text="当前转速" />
+    <TextView
+		android:id="@+id/nowturning_unit"
+		style="@style/field_value_style"
+	 	android:layout_gravity="left"
+		android:text="---- rpm" /> 
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/account_more_list_text"
+        android:layout_height="32dp"
+        android:text="最佳转速" /><LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_main_tree_bg"
+        android:gravity="center_vertical" >
+    <TextView
+		android:id="@+id/bestturning_unit"
+		style="@style/field_value_style"
+	 	android:layout_gravity="left"
+		android:text="---- rpm" /> 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="15dip"
+        android:text="车速"
+        android:textColor="#000000"
+        android:textSize="18dip" />
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nowv_unit"
+        style="@style/account_more_list_text"
+        android:layout_height="32dp"
+        android:text="当前车速" />
+    <TextView
+		android:id="@+id/txv_tpc_value"
+		style="@style/field_value_style"
+	 	android:layout_gravity="left"
+		android:text="---- Times" /> 
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/account_more_list_text"
+        android:layout_height="32dp"
+        android:text="最佳车速" />
+    <TextView
+		android:id="@+id/bestv_unit"
+		style="@style/field_value_style"
+	 	android:layout_gravity="left"
+		android:text="---- Times" /> 
+</LinearLayout>

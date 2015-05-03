@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="4.0dip" >
+<TableLayout 
+        android:id="@+id/tbl_01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:stretchColumns="0,1,2,3" >
+        	        
+        	<!-- 按钮 -->
+	       <TableRow
+		        android:id="@+id/TableRow0"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:padding="2.0dip"  >
+	        
+	        <Button
+		        android:id="@+id/btn_start"
+		        style="?android:attr/buttonStyleSmall"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"   
+		        android:layout_span="1" 
+		        android:padding="2.0dip"    
+		        android:text="@string/string_start" />
+	
+	   		<Button
+		        android:id="@+id/btn_stop"
+		        style="?android:attr/buttonStyleSmall"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1" 
+		        android:layout_span="1"
+		        android:padding="2.0dip"
+		        android:text="@string/string_stop" />
+	   		 </TableRow>
+	   		   
+	        <!-- 设备信息数据 -->
+	        <!-- 第1行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow1"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+		        
+	            <TextView
+		            android:id="@+id/textView61"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:gravity="center"
+		            android:layout_span="4"
+		            android:text="@string/lbl_msg_device_info"
+		            android:textSize="20.0sp"
+		            android:textStyle="bold" />
+		    </TableRow>
+		    
+	        <!-- 第2行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow2"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+	            
+	            <TextView
+		            android:id="@+id/textView62"
+		            style="@style/lbl_msg_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="@string/lbl_field_protocol" />
+		
+		        <TextView
+		            android:id="@+id/txv_protocol_value"
+		            style="@style/field_value_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="----" />
+		
+		        
+		    </TableRow>
+		    
+	        <!-- 第3行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow3"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+		        
+	            <TextView
+		            android:id="@+id/textView64"
+		            style="@style/lbl_msg_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="@string/lbl_field_sn" />
+		
+		        <TextView
+		            android:id="@+id/txv_sn_value"
+		            style="@style/field_value_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="----" />
+	            
+	           
+		        
+		    </TableRow>
+		    
+	        
+	        <!-- 第4行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow4"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+		        
+	            <TextView
+		            android:id="@+id/textView96"
+		            style="@style/lbl_msg_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="@string/lbl_field_btname" />
+		
+		        <TextView
+		            android:id="@+id/txv_btname_value"
+		            style="@style/field_value_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="----" />
+	       		        
+		    </TableRow>
+	        
+	        <!-- 第5行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow5"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+		        
+	             <TextView
+		            android:id="@+id/textView66"
+		            style="@style/lbl_msg_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="@string/lbl_field_hardver" />
+		
+		        <TextView
+		            android:id="@+id/txv_hardver_value"
+		            style="@style/field_value_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="----" />
+		
+		        
+	            
+		    </TableRow>
+		    
+	        <!-- 第6行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow6"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+		        
+	            <TextView
+		            android:id="@+id/textView68"
+		            style="@style/lbl_msg_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="@string/lbl_field_softver" />
+		
+		        <TextView
+		            android:id="@+id/txv_softver_value"
+		            style="@style/field_value_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="----" />
+	            
+		    </TableRow>
+		    
+	        <!-- 车辆故障诊断 -->
+	        <!-- 第7行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow7"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+		        
+	            <TextView
+		            android:id="@+id/textView81"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:gravity="center"
+		            android:layout_span="4"
+		            android:text="@string/lbl_msg_vihicle_dtc"
+		            android:textSize="20.0sp"
+		            android:textStyle="bold" />
+	            
+		    </TableRow>
+		    
+	        <!-- 第8行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow8"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+	            
+	            <TextView
+		            android:id="@+id/textView82"
+		            style="@style/lbl_msg_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="@string/lbl_field_tcc" />
+		
+		        <TextView
+		            android:id="@+id/txv_tcc_value"
+		            style="@style/field_value_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="----" />
+	            
+		    </TableRow>
+		    
+	        <!-- 第9行 -->
+	        <TableRow 
+	            android:id="@+id/TableRow9"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+		        
+	            <TextView
+		            android:id="@+id/textView84"
+		            style="@style/lbl_msg_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="@string/lbl_field_tcd" />
+		
+		        <TextView
+		            android:id="@+id/txv_tcd_value"
+		            style="@style/field_value_style"
+		            android:layout_gravity="left"
+		            android:layout_span="2"
+		            android:text="----" />
+	            
+		    </TableRow>
+    </TableLayout>  
+</ScrollView>
