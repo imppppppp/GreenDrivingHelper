@@ -34,23 +34,14 @@
         style="@style/account_more_list_text"
         android:layout_height="32dp"
         android:text="当前油耗" />
-    <TextView
-		 android:id="@+id/nowfule_unit"
-		 style="@style/field_value_style"
-		 android:layout_gravity="left"
-		 android:textColor="#ffffff"
-		 android:text="---- L/h" />  
+
 
     <TextView
         android:id="@+id/textView2"
         style="@style/account_more_list_text"
         android:layout_height="32dp"
         android:text="最佳油耗" />
-    <TextView
-		android:id="@+id/bestfuel_unit"
-		style="@style/field_value_style"
-	 	android:layout_gravity="left"
-		android:text="---- L/h" />  
+
     
     
     <LinearLayout
@@ -76,11 +67,7 @@
         style="@style/account_more_list_text"
         android:layout_height="32dp"
         android:text="当前转速" />
-    <TextView
-		android:id="@+id/nowturning_unit"
-		style="@style/field_value_style"
-	 	android:layout_gravity="left"
-		android:text="---- rpm" /> 
+
 
     <TextView
         android:id="@+id/textView4"
@@ -92,11 +79,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/search_main_tree_bg"
         android:gravity="center_vertical" >
-    <TextView
-		android:id="@+id/bestturning_unit"
-		style="@style/field_value_style"
-	 	android:layout_gravity="left"
-		android:text="---- rpm" /> 
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -114,20 +97,12 @@
         style="@style/account_more_list_text"
         android:layout_height="32dp"
         android:text="当前车速" />
-    <TextView
-		android:id="@+id/txv_tpc_value"
-		style="@style/field_value_style"
-	 	android:layout_gravity="left"
-		android:text="---- Times" /> 
+
 
     <TextView
         android:id="@+id/textView6"
         style="@style/account_more_list_text"
         android:layout_height="32dp"
         android:text="最佳车速" />
-    <TextView
-		android:id="@+id/bestv_unit"
-		style="@style/field_value_style"
-	 	android:layout_gravity="left"
-		android:text="---- Times" /> 
+
 </LinearLayout>
