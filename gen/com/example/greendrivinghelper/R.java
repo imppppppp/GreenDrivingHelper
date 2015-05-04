@@ -108,6 +108,7 @@ public final class R {
         public static final int TableRow9=0x7f090031;
         public static final int action_hehe=0x7f09006d;
         public static final int action_settings=0x7f09006c;
+        public static final int blue=0x7f090000;
         public static final int btn_start=0x7f090018;
         public static final int btn_stop=0x7f090019;
         public static final int channel1=0x7f090001;
@@ -115,7 +116,6 @@ public final class R {
         public static final int channel3=0x7f090007;
         public static final int channel4=0x7f09000a;
         public static final int channel5=0x7f09000d;
-        public static final int channel_type1=0x7f090000;
         public static final int driving_habits=0x7f090012;
         public static final int imageView1=0x7f090002;
         public static final int imageView2=0x7f090005;

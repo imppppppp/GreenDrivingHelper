@@ -7,7 +7,7 @@
     tools:context="com.imp.data.HomeActivity" >
     
     <ImageView
-        android:id="@+id/channel_type1"
+        android:id="@+id/blue"
         style="@style/channel_type_style"
         android:layout_width="50dp"
         android:layout_height="50dp"

@@ -9,13 +9,13 @@
         android:layout_height="fill_parent"
         android:background="#000000"
         android:orientation="vertical" >
-
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1" >
         </FrameLayout>
+        
 
         <TabWidget
             android:id="@android:id/tabs"
