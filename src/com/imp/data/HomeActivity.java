@@ -11,11 +11,12 @@ import android.widget.ImageView;
 import com.example.greendrivinghelper.R;
 import com.imp.bluetooth.BluetoothSet;
 import com.imp.bluetooth.DeviceListActivity;
+import com.imp.bluetooth.Tools;
 
 public class HomeActivity extends Activity{
 	private ImageView IV1;
-	private BluetoothSet btSet;
-	private BluetoothAdapter bluetooth;
+	private BluetoothSet btSet = Tools.btSet;
+	private BluetoothAdapter bluetooth = Tools.btAdapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub

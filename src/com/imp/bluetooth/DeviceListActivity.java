@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,8 +14,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.greendrivinghelper.R;
+import com.imp.data.DataActivity;
 
 public class DeviceListActivity extends Activity{
 	private static String MacAddress;
@@ -49,7 +52,16 @@ public class DeviceListActivity extends Activity{
 					int position, long id) {
 				// TODO Auto-generated method stub
 				setMacAddress(data.get(position).split(",")[1]);
-				finish();
+				Log.i("MY","输出mac:"+MacAddress);
+				boolean flag = Tools.btSet.bindBluetooth();
+				Log.i("MY","是否绑定成功。flag:"+flag);
+				if(flag){
+					Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
+				}else{
+					Toast.makeText(DeviceListActivity.this, "蓝牙连接失败！", Toast.LENGTH_SHORT).show();
+				}
+				Intent intent1 = new Intent(DeviceListActivity.this,DataActivity.class);
+				startActivity(intent1);
 			}
 		});
 	}

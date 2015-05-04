@@ -2,20 +2,18 @@ package com.imp.bluetooth;
 
 import java.util.ArrayList;
 
-
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
 import android.widget.Toast;
 
 public class BluetoothSet {
-	private BluetoothAdapter mBtAdapter = null;
+	private BluetoothAdapter mBtAdapter = Tools.btAdapter;
 	private Boolean isBusy;//串口是否忙碌
 	private ProgressDialog impDialog = null;//进度条
 	private Context impContext;//上下文
@@ -98,6 +96,24 @@ public class BluetoothSet {
 		impContext.registerReceiver(discoveryResult, 
 				new IntentFilter(BluetoothDevice.ACTION_FOUND));
 	}
+	
+//连接蓝牙
+	public boolean bindBluetooth(){
+		Log.i("MY","toGetRemote");
+		BluetoothDevice device = mBtAdapter.getRemoteDevice(DeviceListActivity.getMacAddress());
+		Log.i("MY","GetRemote");
+		Tools.btDevice = device;
+		boolean flag = false;
+		try{
+			flag = ClsUtils.createBond(device.getClass(), device);
+		}catch(Exception e){
+			Log.i("MY","getRemoteException");
+			e.printStackTrace();
+		}
+		return flag;
+	}
+	
+	
 	
 	
 	/////////////////////////////
