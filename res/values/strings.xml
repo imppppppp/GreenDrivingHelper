@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">绿驾助手</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="category_home">首页</string>
     <string name="category_data">数据</string>
@@ -55,5 +54,7 @@
     <string name="lbl_msg_vihicle_dtc">汽车故障诊断</string>
     <string name="lbl_field_tcc">故障码个数</string>
     <string name="lbl_field_tcd">故障代码</string>
+    
+    <string name="button_search">搜索</string>
 
 </resources>

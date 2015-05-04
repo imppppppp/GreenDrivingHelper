@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.example.greendrivinghelper.R;
 import com.imp.bluetooth.BluetoothSet;
+import com.imp.bluetooth.DeviceListActivity;
 
 public class HomeActivity extends Activity{
 	private ImageView IV1;
@@ -27,10 +29,8 @@ public class HomeActivity extends Activity{
 			public void onClick(View v) {
 				//点击蓝牙图片实现蓝牙连接
 				btSet.openBluetooth();
-				//跳转到设备列表
-				Intent localIntent = new Intent();
-				localIntent.setClass(HomeActivity.this,RealTimeDataActivity.class);
-				startActivity(localIntent);				
+				
+				btSet.findBluetooth();
 			}
 	    });
 		
