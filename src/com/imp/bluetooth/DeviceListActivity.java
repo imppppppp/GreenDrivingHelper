@@ -55,6 +55,9 @@ public class DeviceListActivity extends Activity{
 				Log.i("MY","输出mac:"+MacAddress);
 				boolean flag = Tools.btSet.bindBluetooth();
 				Log.i("MY","是否绑定成功。flag:"+flag);
+				//这个地方我也没整明白。。。就是你绑定蓝牙的时候，它会留在DeviceListActivity这个活动页面。
+				//可是失败的时候，却会跳转到你想要的地方。另外，建议，还是不要跳转到数据区了。
+				//你会丢失掉下面的TAB切换。所以，最好还是跳转到Main.....
 				if(flag){
 					Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
 				}else{

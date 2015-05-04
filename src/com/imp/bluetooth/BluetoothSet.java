@@ -13,7 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 public class BluetoothSet {
-	private BluetoothAdapter mBtAdapter = Tools.btAdapter;
+	private BluetoothAdapter mBtAdapter = null;
 	private Boolean isBusy;//串口是否忙碌
 	private ProgressDialog impDialog = null;//进度条
 	private Context impContext;//上下文

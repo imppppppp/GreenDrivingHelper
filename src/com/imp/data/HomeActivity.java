@@ -15,15 +15,17 @@ import com.imp.bluetooth.Tools;
 
 public class HomeActivity extends Activity{
 	private ImageView IV1;
-	private BluetoothSet btSet = Tools.btSet;
-	private BluetoothAdapter bluetooth = Tools.btAdapter;
+	private BluetoothSet btSet = null;
+	private BluetoothAdapter bluetooth = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		bluetooth = BluetoothAdapter.getDefaultAdapter();
+		Tools.btAdapter = bluetooth;
 		btSet = new BluetoothSet(HomeActivity.this,bluetooth);
+		Tools.btSet = btSet;
 		//ªÒ»°Õº∆¨
 		IV1=(ImageView)this.findViewById(R.id.blue);
 		IV1.setOnClickListener(new ImageView.OnClickListener(){
