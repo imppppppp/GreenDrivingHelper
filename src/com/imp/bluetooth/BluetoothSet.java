@@ -20,7 +20,7 @@ public class BluetoothSet {
 	private static final int ENABLE_BLUETOOTH = 1;
 	private String dStarted = BluetoothAdapter.ACTION_DISCOVERY_STARTED;
 	private String dFinished = BluetoothAdapter.ACTION_DISCOVERY_FINISHED;
-	private String[]s_temp;
+	private String[]s_temp = null;
 	private ArrayList<BluetoothDevice> deviceList = new ArrayList<BluetoothDevice>();
 	public BluetoothSet(Context impContext,BluetoothAdapter bluetooth) {
 		// TODO Auto-generated constructor stub
@@ -87,7 +87,7 @@ public class BluetoothSet {
 		impDialog = new ProgressDialog(impContext);  
         impDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);//设置风格为圆形进度条  
         impDialog.setTitle("提示");//设置标题  
-        impDialog.setMessage("搜索周边蓝牙设备...");  
+        impDialog.setMessage("正在搜索周边蓝牙设备...");  
         impDialog.setIndeterminate(false);//设置进度条是否为不明确  
         impDialog.setCancelable(true);//设置进度条是否可以按退回键取消  
         impDialog.show();     
@@ -97,7 +97,7 @@ public class BluetoothSet {
 				new IntentFilter(BluetoothDevice.ACTION_FOUND));
 	}
 	
-//连接蓝牙
+//绑定蓝牙
 	public boolean bindBluetooth(){
 		Log.i("MY","toGetRemote");
 		BluetoothDevice device = mBtAdapter.getRemoteDevice(DeviceListActivity.getMacAddress());
@@ -105,7 +105,14 @@ public class BluetoothSet {
 		Tools.btDevice = device;
 		boolean flag = false;
 		try{
-			flag = ClsUtils.createBond(device.getClass(), device);
+			if(mBtAdapter.getState() == BluetoothAdapter.STATE_CONNECTED){
+				flag = true;
+			}
+			else{
+				ClsUtils.removeBond(device.getClass(), device);
+				flag = ClsUtils.createBond(device.getClass(), device);
+			}
+			Log.i("MY","flag's state:"+mBtAdapter.getState());
 		}catch(Exception e){
 			Log.i("MY","getRemoteException");
 			e.printStackTrace();
@@ -146,10 +153,12 @@ BroadcastReceiver discoveryResult = new BroadcastReceiver(){
 				deviceList.add(remoteDevice);
 			}
 			StringBuilder str = new StringBuilder();
+			try{
 			for (BluetoothDevice reD : deviceList) {
 				str.append(reD.getName()+","+reD.getAddress()+"\r\n");
 			}
 			s_temp = str.toString().split("\r\n");
+			}catch(Exception e){}
 			
 		}
 		

@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.greendrivinghelper.R;
+import com.imp.Main.MainActivity;
 import com.imp.data.DataActivity;
 
 public class DeviceListActivity extends Activity{
@@ -58,12 +59,14 @@ public class DeviceListActivity extends Activity{
 				//这个地方我也没整明白。。。就是你绑定蓝牙的时候，它会留在DeviceListActivity这个活动页面。
 				//可是失败的时候，却会跳转到你想要的地方。另外，建议，还是不要跳转到数据区了。
 				//你会丢失掉下面的TAB切换。所以，最好还是跳转到Main.....
-				if(flag){
+				/*if(flag){
 					Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
 				}else{
 					Toast.makeText(DeviceListActivity.this, "蓝牙连接失败！", Toast.LENGTH_SHORT).show();
 				}
-				Intent intent1 = new Intent(DeviceListActivity.this,DataActivity.class);
+				*/
+				Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
+				Intent intent1 = new Intent(DeviceListActivity.this,MainActivity.class);
 				startActivity(intent1);
 			}
 		});
