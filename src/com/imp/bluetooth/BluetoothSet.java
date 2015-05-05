@@ -120,6 +120,19 @@ public class BluetoothSet {
 		return flag;
 	}
 	
+	/*连接蓝牙设备*/
+	private void setConnect(){				
+				Log.v("MY","get RemoteSocket");
+				try {
+//					mBluetoothSocket mbt = new mBluetoothSocket(Tools.btAdapter,device);
+					//new BluetoothServer()
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					Log.v("MY",e.getMessage());
+					e.printStackTrace();
+				}
+			
+	}
 	
 	
 	

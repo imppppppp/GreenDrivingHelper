@@ -17,6 +17,7 @@ public class Tools {
 	public UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 	public BluetoothSocket transferSocket;
 	private BluetoothSocket transferSocket_client;
+	
 	private String name = "OBDDTC";
 	public String getName(){
 		return name;

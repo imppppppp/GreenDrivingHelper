@@ -34,14 +34,9 @@ public class DeviceListActivity extends Activity{
 		Log.v("MY","super完成");
 		setContentView(R.layout.device_list);
 		Log.v("MY","与layout连接完成");
-//		listView.setAdapter(null);
-//		data.clear();
-	
 		Log.v("MY","data:"+data);
-	
 		adapter = new ArrayAdapter<String>(
 				DeviceListActivity.this, android.R.layout.simple_list_item_1,data);
-//		adapter.clear();
 		Log.v("MY","创建AdapterList完成");
 		listView = (ListView)findViewById(R.id.new_devices);
 		Log.v("MY","设置listView完成");
@@ -66,6 +61,8 @@ public class DeviceListActivity extends Activity{
 				}
 				*/
 				Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
+				
+				
 				Intent intent1 = new Intent(DeviceListActivity.this,MainActivity.class);
 				startActivity(intent1);
 			}
