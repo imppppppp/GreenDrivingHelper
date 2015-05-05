@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import com.example.greendrivinghelper.R;
 import com.imp.Main.MainActivity;
-import com.imp.data.DataActivity;
 
 public class DeviceListActivity extends Activity{
 	private static String MacAddress;
@@ -61,7 +60,8 @@ public class DeviceListActivity extends Activity{
 				}
 				*/
 				Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
-				
+				MessageProcessing.getBluetoothSocket(); //获取蓝牙socket，并设置为Tools类变量。
+				new MessageProcessing(Tools.transferSocket);//开始xxxxx
 				
 				Intent intent1 = new Intent(DeviceListActivity.this,MainActivity.class);
 				startActivity(intent1);

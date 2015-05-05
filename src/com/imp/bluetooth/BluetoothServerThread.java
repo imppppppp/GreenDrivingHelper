@@ -11,7 +11,7 @@ public class BluetoothServerThread extends Thread{
 	private static boolean firstTime = true;
 	final int bufferSize = 1024;
 	private BluetoothSocket socket = null;
-	private boolean listening = false;
+	private boolean listening = false;//------------------------ÊÇ·ñ
 	private InputStream instream;
 	String atCommond;
 	

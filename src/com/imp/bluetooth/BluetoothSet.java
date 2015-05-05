@@ -126,6 +126,7 @@ public class BluetoothSet {
 				try {
 //					mBluetoothSocket mbt = new mBluetoothSocket(Tools.btAdapter,device);
 					//new BluetoothServer()
+					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					Log.v("MY",e.getMessage());
