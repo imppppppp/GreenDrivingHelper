@@ -10,29 +10,18 @@ import android.util.Log;
 
 public class BluetoothClientSocket {
 	
-	private boolean listening = false;
+	private static boolean listening = false;
 	public BluetoothClientSocket(boolean listening) {
 		// TODO Auto-generated constructor stub
-		this.listening = listening;
+		BluetoothClientSocket.listening = listening;
 	}
-	public void connectToServerSocket(final BluetoothDevice device,final UUID uuid) {
+	public void connectToServerSocket(final BluetoothDevice device,final UUID uuid,final String cmd) {
 	    new Thread(new Runnable() {
 			
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
 				try{
-//			    	  Log.v("MY","connectServerSocket1");
-//			    	  int sdk = Build.VERSION.SDK_INT;
-//		          	Log.v("MY","SDK"+String.valueOf(sdk));
-//		          	BluetoothSocket clientSocket;
-//		          	if(sdk >= 10){
-//		          		 clientSocket 
-//		          		  = device.createInsecureRfcommSocketToServiceRecord(uuid);
-//	            	}else {
-//	            		 clientSocket 
-//				          = device.createRfcommSocketToServiceRecord(uuid);
-//					}  
 					BluetoothSocket clientSocket = Tools.transferSocket;
 			        Log.v("MY","clientSocket"+clientSocket.toString());
 			        Log.v("MY","connectServerSocket2");
@@ -42,7 +31,7 @@ public class BluetoothClientSocket {
 			        // Start listening for messages.
 			      
 //			        	StringBuilder incoming = new StringBuilder();
-			        	listenForMessages(clientSocket);
+			        	listenForMessages(clientSocket,cmd);
 //			        	Log.v("MY","receving:"+incoming.toString());
 			        // Add a reference to the socket used to send messages.
 //			        transferSocket_client = clientSocket;
@@ -55,10 +44,10 @@ public class BluetoothClientSocket {
 		
 	    }
 	
-	private void listenForMessages(final BluetoothSocket socket) {
+	public static synchronized void listenForMessages(final BluetoothSocket socket,final String cmd) {
 		listening = true;
 //		String result = "";
-		new BluetoothServerThread(socket,listening).start();
+		new BluetoothServerThread(socket,listening,cmd).start();
 	}
 	
 }

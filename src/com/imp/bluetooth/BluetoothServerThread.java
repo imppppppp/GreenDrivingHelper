@@ -13,23 +13,24 @@ public class BluetoothServerThread extends Thread{
 	private BluetoothSocket socket = null;
 	private boolean listening = false;//------------------------ÊÇ·ñ
 	private InputStream instream;
-	String atCommond;
+	String atCommand;
 	
-	public BluetoothServerThread(BluetoothSocket socket,boolean listening){
+	public BluetoothServerThread(BluetoothSocket socket,boolean listening,String command){
 //		this.incoming = incoming;
 		this.socket = socket;
 		this.listening = listening;
 		if(firstTime){
-			sendCommond("ATSOFF\r\n");
-			sendCommond("ATHBT\r\n");
+			sendCommand("ATSOFF\r\n");
+			sendCommand("ATDTC\r\n");
+			sendCommand(command);
 			firstTime = false;
 		}
 	}
 	
-	public void sendCommond(String atCommond){
+	public void sendCommand(String atCommand){
 		try {
 			OutputStream outStream = socket.getOutputStream();
-			byte[] byteArray = atCommond.getBytes();
+			byte[] byteArray = atCommand.getBytes();
 			outStream.write(byteArray);
 			outStream.flush();
 		} catch (IOException e) {

@@ -20,7 +20,7 @@ public class Tools {
 	public static BluetoothSocket transferSocket = null;
 	private BluetoothSocket transferSocket_client;
 	
-	private String name = "OBDDTC";
+	public static String name = "OBDDTC";
 	public String getName(){
 		return name;
 	}
