@@ -123,6 +123,7 @@ public class BluetoothSet {
 		device = mBtAdapter.getRemoteDevice(DeviceListActivity.getMacAddress());
 		Log.i("MY","GetRemote");
 		try{
+<<<<<<< HEAD
 
 			//若未配对
 			if(device.getBondState()!=BluetoothDevice.BOND_BONDED){
@@ -138,6 +139,16 @@ public class BluetoothSet {
 		    	is_bonded = !is_bonded;
 			}
 			
+=======
+//			if(mBtAdapter.getState() == BluetoothAdapter.STATE_CONNECTED){
+//				flag = true;
+//			}
+//			else{
+//				//ClsUtils.removeBond(device.getClass(), device);
+				flag = ClsUtils.createBond(device.getClass(), device);
+//			}
+			Log.i("MY","flag's state:"+mBtAdapter.getState());
+>>>>>>> eb6c9e95a56e9e2fd53008537f2a3d78523b1ef4
 		}catch(Exception e){
 			Log.i("MY","getRemoteException");
 			e.printStackTrace();
@@ -145,6 +156,20 @@ public class BluetoothSet {
 		return is_bonded;
 	}
 	
+	/*连接蓝牙设备*/
+	public void setConnect(){				
+				Log.v("MY","get RemoteSocket");
+				try {
+//					mBluetoothSocket mbt = new mBluetoothSocket(Tools.btAdapter,device);
+					new mBluetootServer();
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					Log.v("MY",e.getMessage());
+					e.printStackTrace();
+				}
+			
+	}
 	
 	
 	

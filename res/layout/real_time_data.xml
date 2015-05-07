@@ -19,7 +19,11 @@
 		        android:padding="2.0dip"  >
 	        
 	        <Button
+<<<<<<< HEAD
 		        android:id="@+id/btn_showrealdata"
+=======
+		        android:id="@+id/btn_showrealtimedata"
+>>>>>>> eb6c9e95a56e9e2fd53008537f2a3d78523b1ef4
 		        style="?android:attr/buttonStyleSmall"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
@@ -29,7 +33,11 @@
 		        android:text="@string/string_start" />
 	
 	   		<Button
+<<<<<<< HEAD
 		        android:id="@+id/btn_hiderealdata"
+=======
+		        android:id="@+id/btn_hiderealtimedata"
+>>>>>>> eb6c9e95a56e9e2fd53008537f2a3d78523b1ef4
 		        style="?android:attr/buttonStyleSmall"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"

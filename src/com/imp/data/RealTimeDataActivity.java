@@ -4,6 +4,7 @@ package com.imp.data;
 
 import android.app.Activity;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -34,11 +35,23 @@ public class RealTimeDataActivity extends Activity{
 	
 	private getDataThread mgetDataThread;
 	
+=======
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+import com.example.greendrivinghelper.R;
+import com.imp.bluetooth.MessageProcessing;
+
+public class RealTimeDataActivity extends Activity{
+	private Button showData;
+>>>>>>> eb6c9e95a56e9e2fd53008537f2a3d78523b1ef4
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.real_time_data);
+<<<<<<< HEAD
 		initData();
 		bt_show=(Button)findViewById(R.id.btn_showrealdata);
 		bt_show.setOnClickListener(new OnClickListener() {
@@ -66,6 +79,17 @@ public class RealTimeDataActivity extends Activity{
 		}
 	});
     
+=======
+		showData = (Button) findViewById(R.id.btn_showrealtimedata);
+		showData.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				MessageProcessing.setHandler("ATHBT\r\n");
+			}
+		});
+>>>>>>> eb6c9e95a56e9e2fd53008537f2a3d78523b1ef4
 	}
 
 	private final Handler mHandler = new Handler(){

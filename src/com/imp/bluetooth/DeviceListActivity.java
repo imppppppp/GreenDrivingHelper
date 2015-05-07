@@ -19,8 +19,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.greendrivinghelper.R;
+<<<<<<< HEAD
 import com.imp.home.HomeActivity;
 import com.imp.main.MainActivity;
+=======
+import com.imp.Main.MainActivity;
+>>>>>>> eb6c9e95a56e9e2fd53008537f2a3d78523b1ef4
 
 public class DeviceListActivity extends Activity{
 	private static String MacAddress;
@@ -37,14 +41,17 @@ public class DeviceListActivity extends Activity{
 		Log.v("MY","super完成");
 		setContentView(R.layout.device_list);
 		Log.v("MY","与layout连接完成");
+<<<<<<< HEAD
 //		listView.setAdapter(null);
 //		data.clear();
 		
 		Log.v("MY","data:"+data);
 		
+=======
+		Log.v("MY","data:"+data);
+>>>>>>> eb6c9e95a56e9e2fd53008537f2a3d78523b1ef4
 		adapter = new ArrayAdapter<String>(
 				DeviceListActivity.this, android.R.layout.simple_list_item_1,data);
-//		adapter.clear();
 		Log.v("MY","创建AdapterList完成");
 		listView = (ListView)findViewById(R.id.new_devices);
 		Log.v("MY","设置listView完成");
@@ -57,6 +64,7 @@ public class DeviceListActivity extends Activity{
 				// TODO Auto-generated method stub
 				setMacAddress(data.get(position).split(",")[1]);
 				Log.i("MY","输出mac:"+MacAddress);
+<<<<<<< HEAD
 				boolean flag = HomeActivity.btSet.bindBluetooth();
 				Log.i("MY","是否配对成功。flag:"+flag);
 				Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
@@ -68,6 +76,13 @@ public class DeviceListActivity extends Activity{
 					// TODO: handle exception
 					Log.i("MY","捕获到通信异常");
 				}
+=======
+				boolean flag = Tools.btSet.bindBluetooth();
+				Log.i("MY","是否绑定成功。flag:"+flag);
+				Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
+				MessageProcessing.getBluetoothSocket(); //获取蓝牙socket，并设置为Tools类变量。
+				new MessageProcessing(Tools.transferSocket);//开始xxxxx
+>>>>>>> eb6c9e95a56e9e2fd53008537f2a3d78523b1ef4
 				
 				Intent intent1 = new Intent(DeviceListActivity.this,MainActivity.class);
 				startActivity(intent1);
