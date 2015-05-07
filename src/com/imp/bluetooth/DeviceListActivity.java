@@ -8,6 +8,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -61,7 +62,8 @@ public class DeviceListActivity extends Activity{
 				Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
 				try {
 //					new mBluetoothSocket(BluetoothSet.mBtAdapter,BluetoothSet.device);
-					new mBluetoothSocket(HomeActivity.bluetooth,BluetoothSet.device);
+					Handler handler = null;
+					new mBluetoothSocket(HomeActivity.bluetooth,BluetoothSet.device,handler);
 				} catch (Exception e) {
 					// TODO: handle exception
 					Log.i("MY","捕获到通信异常");

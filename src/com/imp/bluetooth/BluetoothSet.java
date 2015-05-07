@@ -26,6 +26,8 @@ public class BluetoothSet {
 //	private static final int ENABLE_BLUETOOTH = 1;
 	private String dStarted = BluetoothAdapter.ACTION_DISCOVERY_STARTED;
 	private String dFinished = BluetoothAdapter.ACTION_DISCOVERY_FINISHED;
+	public static final int MESSAGE_READ = 1;//2
+	
 	private String[]s_temp = null;
 	private ArrayList<BluetoothDevice> deviceList = new ArrayList<BluetoothDevice>();
 	public static BluetoothDevice device = null;
