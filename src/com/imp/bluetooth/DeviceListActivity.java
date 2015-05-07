@@ -13,12 +13,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.greendrivinghelper.R;
-import com.imp.Main.MainActivity;
-import com.imp.data.DataActivity;
+import com.imp.home.HomeActivity;
+import com.imp.main.MainActivity;
 
 public class DeviceListActivity extends Activity{
 	private static String MacAddress;
@@ -26,6 +27,7 @@ public class DeviceListActivity extends Activity{
 	private static List<String> data = new ArrayList<String>();
 	private static ListView listView;
 	private static ArrayAdapter<String> adapter;
+	private Button button_scan;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -36,9 +38,9 @@ public class DeviceListActivity extends Activity{
 		Log.v("MY","与layout连接完成");
 //		listView.setAdapter(null);
 //		data.clear();
-	
+		
 		Log.v("MY","data:"+data);
-	
+		
 		adapter = new ArrayAdapter<String>(
 				DeviceListActivity.this, android.R.layout.simple_list_item_1,data);
 //		adapter.clear();
@@ -54,18 +56,17 @@ public class DeviceListActivity extends Activity{
 				// TODO Auto-generated method stub
 				setMacAddress(data.get(position).split(",")[1]);
 				Log.i("MY","输出mac:"+MacAddress);
-				boolean flag = Tools.btSet.bindBluetooth();
-				Log.i("MY","是否绑定成功。flag:"+flag);
-				//这个地方我也没整明白。。。就是你绑定蓝牙的时候，它会留在DeviceListActivity这个活动页面。
-				//可是失败的时候，却会跳转到你想要的地方。另外，建议，还是不要跳转到数据区了。
-				//你会丢失掉下面的TAB切换。所以，最好还是跳转到Main.....
-				/*if(flag){
-					Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
-				}else{
-					Toast.makeText(DeviceListActivity.this, "蓝牙连接失败！", Toast.LENGTH_SHORT).show();
-				}
-				*/
+				boolean flag = HomeActivity.btSet.bindBluetooth();
+				Log.i("MY","是否配对成功。flag:"+flag);
 				Toast.makeText(DeviceListActivity.this, "蓝牙已连接", Toast.LENGTH_SHORT).show();
+				try {
+//					new mBluetoothSocket(BluetoothSet.mBtAdapter,BluetoothSet.device);
+					new mBluetoothSocket(HomeActivity.bluetooth,BluetoothSet.device);
+				} catch (Exception e) {
+					// TODO: handle exception
+					Log.i("MY","捕获到通信异常");
+				}
+				
 				Intent intent1 = new Intent(DeviceListActivity.this,MainActivity.class);
 				startActivity(intent1);
 			}

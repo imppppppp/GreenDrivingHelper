@@ -2,6 +2,8 @@ package com.imp.bluetooth;
 
 import java.util.ArrayList;
 
+import com.imp.home.HomeActivity;
+
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -13,19 +15,24 @@ import android.util.Log;
 import android.widget.Toast;
 
 public class BluetoothSet {
-	private BluetoothAdapter mBtAdapter = null;
+	//private BluetoothAdapter mBtAdapter = null;
+	//change
+	public static BluetoothAdapter mBtAdapter = null;
+	public static int mState;//蓝牙连接状态
 	private Boolean isBusy;//串口是否忙碌
 	private ProgressDialog impDialog = null;//进度条
 	private Context impContext;//上下文
-	private static final int ENABLE_BLUETOOTH = 1;
+	private boolean is_bonded;
+//	private static final int ENABLE_BLUETOOTH = 1;
 	private String dStarted = BluetoothAdapter.ACTION_DISCOVERY_STARTED;
 	private String dFinished = BluetoothAdapter.ACTION_DISCOVERY_FINISHED;
 	private String[]s_temp = null;
 	private ArrayList<BluetoothDevice> deviceList = new ArrayList<BluetoothDevice>();
+	public static BluetoothDevice device = null;
 	public BluetoothSet(Context impContext,BluetoothAdapter bluetooth) {
 		// TODO Auto-generated constructor stub
 		this.impContext = impContext;
-		this.mBtAdapter = bluetooth;
+		BluetoothSet.mBtAdapter = bluetooth;
 	}
 	
 	/*判断是否支持本地蓝牙设备*/
@@ -37,9 +44,20 @@ public class BluetoothSet {
 	}
 	
 	/*判断蓝牙是否已连接----------------------------------------*/
-	public Boolean isConnected(){
-        return false;
-	}
+//	public Boolean isConnected(){
+//		if(mBtService.getState() == BluetoothService.STATE_CONNECTED){
+//			return true;
+//		}
+//		else{
+//			return false;
+//		}
+//	}
+	
+	/*设置蓝牙连接状态*/
+	private synchronized void setState(int state) {
+        mState = state;
+    }
+
 	
 	/*蓝牙服务是否注册------------------------------------------*/
 	
@@ -77,11 +95,11 @@ public class BluetoothSet {
 	}
 	
 	
-//搜索周围蓝牙设备。
+    //搜索周围蓝牙设备。
 	public void findBluetooth(){
-		if (!mBtAdapter.isEnabled()){
-			mBtAdapter.enable();
-		}
+//		if (!mBtAdapter.isEnabled()){
+//			mBtAdapter.enable();
+//		}
 		//开始查询
 		mBtAdapter.startDiscovery();
 		impDialog = new ProgressDialog(impContext);  
@@ -97,27 +115,32 @@ public class BluetoothSet {
 				new IntentFilter(BluetoothDevice.ACTION_FOUND));
 	}
 	
-//绑定蓝牙
+    //绑定蓝牙
 	public boolean bindBluetooth(){
 		Log.i("MY","toGetRemote");
-		BluetoothDevice device = mBtAdapter.getRemoteDevice(DeviceListActivity.getMacAddress());
+		device = mBtAdapter.getRemoteDevice(DeviceListActivity.getMacAddress());
 		Log.i("MY","GetRemote");
-		Tools.btDevice = device;
-		boolean flag = false;
 		try{
-			if(mBtAdapter.getState() == BluetoothAdapter.STATE_CONNECTED){
-				flag = true;
+
+			//若未配对
+			if(device.getBondState()!=BluetoothDevice.BOND_BONDED){
+				is_bonded = ClsUtils.createBond(device.getClass(), device);
+				Log.i("MY","蓝牙是否已绑定:"+mBtAdapter.getState()+is_bonded);
 			}
-			else{
-				ClsUtils.removeBond(device.getClass(), device);
-				flag = ClsUtils.createBond(device.getClass(), device);
+			//已配对
+		    else{
+				//ClsUtils.removeBond(device.getClass(), device);
+		    	is_bonded = ClsUtils.createBond(device.getClass(), device);
+		    	is_bonded = ClsUtils.createBond(device.getClass(), device);
+		    	Log.i("MY","蓝牙是否已绑定:"+mBtAdapter.getState()+!is_bonded);
+		    	is_bonded = !is_bonded;
 			}
-			Log.i("MY","flag's state:"+mBtAdapter.getState());
+			
 		}catch(Exception e){
 			Log.i("MY","getRemoteException");
 			e.printStackTrace();
 		}
-		return flag;
+		return is_bonded;
 	}
 	
 	

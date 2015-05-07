@@ -1,13 +1,5 @@
-package com.imp.Main;
+package com.imp.main;
 
-import com.imp.data.DataActivity;
-import com.imp.drivingEvaluating.DrivingEvaluatingActivity;
-import com.imp.data.HomeActivity;
-import com.imp.more.MoreActivity;
-import com.imp.savinghelper.SavingHelperActivity;
-import com.example.greendrivinghelper.R;
-
-import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,13 +8,19 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+
+import com.example.greendrivinghelper.R;
+import com.imp.data.DataActivity;
+import com.imp.drivingEvaluating.DrivingEvaluatingActivity;
+import com.imp.home.HomeActivity;
+import com.imp.more.MoreActivity;
+import com.imp.savinghelper.SavingHelperActivity;
 
 public class MainActivity extends TabActivity implements OnClickListener {
 	public static String TAB_TAG_HOME = "home";
